@@ -1,0 +1,8 @@
+// create array
+a = array(3);
+a[0] = "hello";
+a[1] = ", ";
+a[2] = "world";
+println("Size: ", arraySize(a));
+println(a);
+println(a[0], a[1], a[2]);

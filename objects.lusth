@@ -1,0 +1,14 @@
+func setage(age)
+{
+	age2 = age;
+}
+func getage(age)
+{
+	age2 = setage(age);
+}
+age = 2;
+print("Age is ");
+print(getage(age));
+println();
+
+

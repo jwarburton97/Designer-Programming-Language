@@ -1,0 +1,127 @@
+// cons, car, cdr
+
+func cons(x, y) {
+    temp = array(2);
+    temp[0] = x;
+    temp[1] = y;
+    temp;
+}
+
+func car(x) {
+    x[0];
+}
+
+func setCar(x, n) {
+    x[0] = n;
+}
+
+func setCdr(x, n) {
+    x[1] = n;
+}
+
+func cdr(x) {
+    x[1];
+}
+
+// stack helpers
+
+func stack() {
+    cons(nil, 0);
+}
+
+func push(item, stk) {
+    size = cdr(stk) + 1;
+    new = cons(item, car(stk));
+    cons(new, size);
+}
+
+func peek(stk) {
+    if (stackSize(stk) == 0) {
+        nil;
+    } else {
+        car(car(stk));
+    }
+}
+
+func pop(list) {
+    size = cdr(list) - 1;
+    if (size <= 0) {
+        new = nil;
+    } else {
+        new = cdr(car(list));
+    }
+    cons(new, size);
+}
+    
+func stackSize(stk) {
+    cdr(stk);
+}
+
+// binary tree helpers
+
+func node() {
+    cons(
+        cons(
+            cons(nil, nil), 
+            cons(nil, nil)
+            ), 
+        cons(nil, nil)
+        );
+}
+
+func getWeight(n) {
+    if (n == null) {
+        0;
+    } else {
+        car(car(car(n)));
+    }
+}
+
+func setWeight(n, w) {
+    setCar(car(car(n)), w);
+}
+
+func getParent(n) {
+    cdr(car(car(n)));
+}
+
+func setParent(n, p) {
+    setCdr(car(car(n)), p);
+}
+
+func getLeft(n) {
+    car(cdr(car(n)));
+}
+
+func setLeft(n, l) {
+    setCar(cdr(car(n)), l);
+}
+
+func getRight(n) {
+    cdr(cdr(car(n)));
+}
+
+func setRight(n, r) {
+    setCdr(cdr(car(n)), r);
+}
+
+func getGrand(n) {
+    par = cdr(car(car(n)));
+    cdr(car(car(par)));
+}
+
+func getValue(n) {
+    cdr(cdr(n));
+}
+
+func setValue(n, v) {
+    setCdr(cdr(n), v);
+}
+
+func getKey(n) {
+    car(cdr(n));
+}
+
+func setKey(n) {
+    setCar(cdr(n));
+}

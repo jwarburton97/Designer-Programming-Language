@@ -1,0 +1,9 @@
+func test(test)
+{
+	func lamda(x)
+	{
+		x+2;
+	}
+	
+}
+println(test(5));

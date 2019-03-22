@@ -1,0 +1,23 @@
+func max(x, y) {
+    if (x > y) {
+        x;
+    } else {
+        y;
+    }
+}
+
+func min(x, y) {
+    if (x < y) {
+        x;
+    } else {
+        y;
+    }
+}
+
+func fact(n) {
+    if (n == 1) {
+        1;
+    } else {
+        n * fact(n-1);
+    }
+}

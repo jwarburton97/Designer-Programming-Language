@@ -1,0 +1,14 @@
+func condit(x) {
+    if (x == 0) {
+        println("x = 0");
+    } else {
+        println("x = ", x);
+    }
+}
+
+print("condit(0) is ");
+condit(0);
+print("condit(42 is ");
+condit(42); 
+println("foo" == "foo");
+println("foo" == "bar");

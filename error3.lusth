@@ -1,0 +1,5 @@
+func foo() {
+    a = "Can't subtract strings.";
+    b = "asdf" - "qwer";
+}
+foo();

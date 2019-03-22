@@ -1,0 +1,4 @@
+func foo() {
+    println("This line is missing a closing parenthesis."
+}
+foo();

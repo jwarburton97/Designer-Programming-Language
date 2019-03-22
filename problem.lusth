@@ -1,0 +1,161 @@
+// setup input array
+func test1() {
+    arr = array(3);
+    arr[0] = 2;
+    arr[1] = 1;
+    arr[2] = "+";
+    arr;
+}
+
+func test2() {
+    arr = array(3);
+    arr[0] = 2;
+    arr[1] = 1;
+    arr[2] = "-";
+    arr;
+}
+
+func test3() {
+    arr = array(3);
+    arr[0] = 2;
+    arr[1] = 1;
+    arr[2] = "*";
+    arr;
+}
+func test4() {
+    arr = array(3);
+    arr[0] = 2;
+    arr[1] = 1;
+    arr[2] = "/";
+    arr;
+}
+func test5() {
+    arr = array(3);
+    arr[0] = 2;
+    arr[1] = 1;
+    arr[2] = "^";
+    arr;
+}
+func test6() {
+    arr = array(11);
+    arr[0] = 1;
+    arr[1] = 2;
+    arr[2] = "+";  // 1 + 2 = 3
+    arr[3] = 3;
+    arr[4] = "*";  // 3 * 3 = 9
+    arr[5] = 3;
+    arr[6] = "/";  // 9 / 3 = 3
+    arr[7] = 1;
+    arr[8] = "-";  // 3 - 1 = 2
+    arr[9] = 3;
+    arr[10] = "^"; // 2 ^ 3 = 8
+    arr;
+}
+
+func test7() {
+    arr = array(9);
+    arr[0] = 2;
+    arr[1] = 4;
+    arr[2] = "/";  // 2 / 4 = 0
+    arr[3] = 3;
+    arr[4] = "*";  // 0 * 3 = 0
+    arr[5] = 2;
+    arr[6] = "+";  // 0 + 2 = 2
+    arr[7] = 2;
+    arr[8] = "^";  // 2 ^ 2 = 4
+    arr;
+}
+func rpn(inputArray) {
+    size = arraySize(inputArray);
+    stk = stack();
+    for (i = 0; i < size; i = i + 1) {
+        x = inputArray[i];
+        if (x == "*") {
+            b = peek(stk);
+            stk = pop(stk);
+            a = peek(stk);
+            stk = pop(stk);
+            stk = push(a * b, stk);
+        } else if (x == "/") {
+            b = peek(stk);
+            stk = pop(stk);
+            a = peek(stk);
+            stk = pop(stk);
+            stk = push(a / b, stk);
+        } else if (x == "+") {
+            b = peek(stk);
+            stk = pop(stk);
+            a = peek(stk);
+            stk = pop(stk);
+            stk = push(a + b, stk);
+        } else if (x == "-") {
+            b = peek(stk);
+            stk = pop(stk);
+            a = peek(stk);
+            stk = pop(stk);
+            stk = push(a - b, stk);
+        } else if (x == "^") {
+            b = peek(stk);
+            stk = pop(stk);
+            a = peek(stk);
+            stk = pop(stk);
+            stk = push(a ^ b, stk);
+        } else {
+            stk = push(x, stk);
+        }
+    }
+    peek(stk);
+}
+
+func main() {
+    println("Test 1");
+    t1 = test1();
+    print("Input array: ");
+    print(t1); println("");
+    print("Result: "); println(rpn(t1));
+    println("");
+
+    println("Test 2");
+    t2 = test2();
+    print("Input array: ");
+    print(t2); println("");
+    print("Result: "); println(rpn(t2));
+    println("");
+
+    println("Test 3");
+    t3 = test3();
+    print("Input array: ");
+    print(t3); println("");
+    print("Result: "); println(rpn(t3));
+    println("");
+
+    println("Test 4");
+    t4 = test4();
+    print("Input array: ");
+    print(t4); println("");
+    print("Result: "); println(rpn(t4));
+    println("");
+
+    println("Test 5");
+    t5 = test5();
+    print("Input array: ");
+    print(t5); println("");
+    print("Result: "); println(rpn(t5));
+    println("");
+
+    println("Test 6");
+    t6 = test6();
+    print("Input array: ");
+    print(t6); println("");
+    print("Result: "); println(rpn(t6));
+    println("");
+
+    println("Test 7");
+    t7 = test7();
+    print("Input array: ");
+    print(t7); println("");
+    print("Result: "); println(rpn(t7));
+    println("");
+
+}
+main();
