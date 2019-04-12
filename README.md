@@ -4,7 +4,7 @@ CS 403 Programming Languages
 
 ===============================
 To run:
-make : copiles everything
+make : compiles everything
 make error1
 make error1x
 make error2
